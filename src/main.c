@@ -1,7 +1,9 @@
 #include <stdio.h>
 
+#include "helpers/helpers.h"
+
 int main() {
   const char* s = "Hello world";
-  printf(s);
+  taskPrint(s);
   return 0;
 }

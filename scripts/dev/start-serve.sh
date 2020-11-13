@@ -1,13 +1,11 @@
 #!/bin/bash
 
 cd ../
-DIR="./out"
+OUT_DIR="./out"
 
-[ ! -d "$DIR" ] && mkdir -p "$DIR"
+[ ! -d "$OUT_DIR" ] && mkdir -p "$OUT_DIR"
 
-echo -e "\nbuilding files in ${DIR}..."
-
-gcc -g src/main.c -o out/main.exe
+gcc -g src/**/*.c src/main.c -o out/main.exe -lm
 
 echo -e "Output:\e[33m"
 ./out/main.exe
