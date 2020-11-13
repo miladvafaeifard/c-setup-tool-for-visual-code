@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 #include "helpers/helpers.h"
+#include "core/api.h"
 
 int main() {
-  const char* s = "Hello world";
-  taskPrint(s);
+  taskPrint(getNames());
   return 0;
 }
