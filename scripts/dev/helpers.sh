@@ -30,3 +30,27 @@ function appendGcc {
     gcc_run+="src/$file.c -o out/$file.exe"
     echo $gcc_run
 }
+
+# pipes
+function concatFilesPipe {
+    while read dirs; do
+        local libs=""
+        for dir in $dirs; do
+            libs+="$dir*.c "
+        done
+    done
+    echo $libs
+}
+
+function wrapGccPipe {
+    while read dirs; do
+        local libs=${dirs}
+        local file=$1
+        local gcc_run="gcc -g "
+        for lib in $libs; do
+            gcc_run+="${lib} "
+        done
+        gcc_run+="src/$file.c -o out/$file.exe"
+    done
+    echo $gcc_run
+}

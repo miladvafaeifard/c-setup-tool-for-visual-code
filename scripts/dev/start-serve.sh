@@ -7,11 +7,16 @@ OUT_DIR="./out"
 
 source ./scripts/dev/helpers.sh
 
-dirs=$(getCurrentDirs "src/*/")
-libs=$(getLibfilesInC $dirs)
-gcc_run=$(appendGcc "main" $libs)
+# functions list execution
+# dirs=$(getCurrentDirs "src/*/")
+# libs=$(getLibfilesInC $dirs)
+# gcc_run=$(appendGcc "main" $libs)
+
+# pipes
+gcc_run=$(getCurrentDirs "src/*/" | concatFilesPipe "c" | wrapGccPipe "main")
 
 echo "Executing..."
+echo "${gcc_run}"
 $gcc_run
 
 echo -e "Output:\e[33m"
