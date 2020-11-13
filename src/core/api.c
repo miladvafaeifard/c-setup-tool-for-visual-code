@@ -1,5 +1,5 @@
 #include <stdio.h>
 
 char* getNames() {
-    return "Test hello";
+    return "new c programming";
 }

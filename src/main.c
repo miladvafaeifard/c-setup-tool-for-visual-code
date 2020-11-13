@@ -4,6 +4,6 @@
 #include "core/api.h"
 
 int main() {
-  taskPrint(getNames());
+  taskPrint("Welcome");
   return 0;
 }
